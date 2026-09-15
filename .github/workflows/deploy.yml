@@ -15,9 +15,12 @@ concurrency:
 
 jobs:
   build:
-    # main is the trunk: it is the only branch that publishes, whichever
-    # branch the repository is currently configured to show by default.
-    if: github.ref_name == 'main'
+    # Publish from whatever the repository's default branch is called.
+    # This is not just convention: the github-pages environment only accepts
+    # deployments from the default branch, so any other value here fails the
+    # deploy job after a green build. Point Settings → Branches at main and
+    # this follows automatically.
+    if: github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
