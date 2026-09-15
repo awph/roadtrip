@@ -1,0 +1,4 @@
+Déposer ici les traces exportées depuis Ride Planner, nommées J1.gpx à J7.gpx.
+
+Tant qu'un fichier est absent, le bouton « Télécharger la trace GPX » ne
+s'affiche pas sur la page de l'étape concernée, et le build le signale.

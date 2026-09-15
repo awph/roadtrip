@@ -1,0 +1,480 @@
+{
+  "meta": {
+    "title": "Road Trip Alpes 2026",
+    "subtitle": "Lausanne — Méditerranée — Lausanne",
+    "dates": "3 au 9 octobre 2026",
+    "shortDates": "3–9 oct. 2026",
+    "riders": ["Alex", "Pilote 2", "Pilote 3"],
+    "description": "Road book d'une boucle moto de 7 jours entre le Léman et la Méditerranée, par les grands cols des Alpes.",
+    "startYear": 2026,
+    "mapPoints": {
+      "La Conversion": [46.51, 6.69],
+      "Bourg-Saint-Maurice": [45.62, 6.77],
+      "Briançon": [44.9, 6.64],
+      "Barcelonnette": [44.39, 6.65],
+      "Menton": [43.78, 7.5],
+      "Castellane": [43.85, 6.51],
+      "Die": [44.75, 5.37]
+    }
+  },
+  "days": [
+    {
+      "id": 1,
+      "date": "2026-10-03",
+      "dayLabel": "Jour 1",
+      "from": "La Conversion",
+      "to": "Bourg-Saint-Maurice",
+      "distanceKm": 286,
+      "ridingTime": "5h14",
+      "summary": "Départ tranquille du Lavaux, passage en France par le Chablais et enchaînement immédiat des premiers cols savoyards. La journée monte en puissance : on quitte le lac pour finir sur le Cormet de Roselend, sans doute la plus belle descente du voyage.",
+      "highlights": [
+        "Passage en France par le Pas de Morgins",
+        "Enchaînement Colombière / Aravis / Saisies",
+        "Descente du Cormet de Roselend sur le lac de barrage"
+      ],
+      "cols": [
+        { "name": "Pas de Morgins", "altitude": 1369 },
+        { "name": "Col du Corbier", "altitude": 1237 },
+        { "name": "Col de l'Encrenaz", "altitude": 1433 },
+        { "name": "Col de la Ramaz", "altitude": 1619 },
+        { "name": "Col de la Colombière", "altitude": 1618 },
+        { "name": "Col des Aravis", "altitude": 1486 },
+        { "name": "Col des Saisies", "altitude": 1650 },
+        { "name": "Cormet de Roselend", "altitude": 1968 }
+      ],
+      "waypoints": [
+        "La Conversion",
+        "Troistorrents",
+        "Morgins",
+        "Châtel",
+        "Le Biot",
+        "Taninges",
+        "Le Grand-Bornand",
+        "La Clusaz",
+        "Beaufort",
+        "Bourg-Saint-Maurice"
+      ],
+      "gpxFile": "gpx/J1.gpx",
+      "ridePlannerUrl": null,
+      "options": [],
+      "warnings": [
+        "Le Col de la Ramaz peut fermer sur neige dès le début octobre. Vérifier la veille sur savoie-route.fr.",
+        "Le Cormet de Roselend est exposé au gel matinal. Prudence sur les zones d'ombre en descente."
+      ],
+      "hotel": {
+        "name": "Hôtel l'Autantic",
+        "city": "Bourg-Saint-Maurice",
+        "status": "à réserver",
+        "address": null,
+        "phone": null,
+        "url": null,
+        "parking": null,
+        "notes": null,
+        "bookingRef": null
+      }
+    },
+    {
+      "id": 2,
+      "date": "2026-10-04",
+      "dayLabel": "Jour 2",
+      "from": "Bourg-Saint-Maurice",
+      "to": "Briançon",
+      "distanceKm": 343,
+      "ridingTime": "6h42",
+      "summary": "La journée des géants. L'Iseran au petit matin, puis la traversée Maurienne avec Glandon et Croix de Fer, avant de remonter Télégraphe et Galibier. Sept heures de selle et plus de 2 700 m d'altitude au point haut : la plus exigeante des trois premiers jours.",
+      "highlights": [
+        "Col de l'Iseran, plus haut col routier des Alpes",
+        "Boucle Glandon / Croix de Fer au-dessus de la Maurienne",
+        "Montée Télégraphe puis Galibier, descente par le Lautaret sur Briançon"
+      ],
+      "cols": [
+        { "name": "Col de l'Iseran", "altitude": 2764 },
+        { "name": "Col du Glandon", "altitude": 1924 },
+        { "name": "Col de la Croix de Fer", "altitude": 2067 },
+        { "name": "Col du Télégraphe", "altitude": 1566 },
+        { "name": "Col du Galibier", "altitude": 2642 },
+        { "name": "Col du Lautaret", "altitude": 2058 }
+      ],
+      "waypoints": [
+        "Bourg-Saint-Maurice",
+        "Val-d'Isère",
+        "Bonneval-sur-Arc",
+        "Lanslebourg",
+        "Saint-Jean-de-Maurienne",
+        "Valloire",
+        "Briançon"
+      ],
+      "gpxFile": "gpx/J2.gpx",
+      "ridePlannerUrl": null,
+      "options": [
+        {
+          "name": "Col du Mont-Cenis",
+          "altitude": 2083,
+          "description": "Aller-retour depuis Lanslebourg jusqu'au col et au lac de barrage, puis demi-tour.",
+          "addsKm": 30,
+          "addsTime": "1h00",
+          "decisionPoint": "À Lanslebourg, avant 13 h"
+        }
+      ],
+      "warnings": [
+        "Col de l'Iseran : fermeture possible sur neige sans préavis en octobre. Contrôler l'ouverture la veille au soir.",
+        "Col du Galibier : même risque. En cas de fermeture, rabattement par le Lautaret depuis Saint-Michel-de-Maurienne.",
+        "Départ tôt conseillé. L'Iseran est glacé tant que le soleil n'a pas tourné."
+      ],
+      "hotel": {
+        "name": "Hôtel Vauban",
+        "city": "Briançon",
+        "status": "à réserver",
+        "address": null,
+        "phone": null,
+        "url": null,
+        "parking": null,
+        "notes": null,
+        "bookingRef": null
+      }
+    },
+    {
+      "id": 3,
+      "date": "2026-10-05",
+      "dayLabel": "Jour 3",
+      "from": "Briançon",
+      "to": "Barcelonnette",
+      "distanceKm": 306,
+      "ridingTime": "6h27",
+      "summary": "Six cols au-dessus de 2 000 m et une incursion en Italie par l'Agnel. La Casse Déserte de l'Izoard au réveil, puis un chapelet ininterrompu jusqu'à la Cayolle. Peu de kilomètres, beaucoup de virages.",
+      "highlights": [
+        "La Casse Déserte, côté sud de l'Izoard",
+        "Col Agnel et passage en Italie par Pontechianale",
+        "Boucle Allos / Champs / Cayolle pour finir"
+      ],
+      "cols": [
+        { "name": "Col d'Izoard", "altitude": 2360 },
+        { "name": "Col Agnel", "altitude": 2744 },
+        { "name": "Col de Vars", "altitude": 2108 },
+        { "name": "Col d'Allos", "altitude": 2250 },
+        { "name": "Col des Champs", "altitude": 2095 },
+        { "name": "Col de la Cayolle", "altitude": 2326 }
+      ],
+      "waypoints": [
+        "Briançon",
+        "Arvieux",
+        "Château-Ville-Vieille",
+        "Pontechianale",
+        "Guillestre",
+        "Barcelonnette",
+        "Colmars",
+        "Saint-Martin-d'Entraunes",
+        "Barcelonnette"
+      ],
+      "gpxFile": "gpx/J3.gpx",
+      "ridePlannerUrl": null,
+      "options": [],
+      "warnings": [
+        "Col Agnel : deuxième plus haut col routier des Alpes, fermeture sur neige fréquente en octobre. Vérifier côté français et côté italien.",
+        "Cols d'Allos, des Champs et de la Cayolle : routes étroites sans parapet, fermées dès la première neige.",
+        "Passage en Italie : prévoir papiers du véhicule et carte d'identité."
+      ],
+      "hotel": {
+        "name": "Hôtel du Cheval Blanc",
+        "city": "Barcelonnette",
+        "status": "à réserver",
+        "address": null,
+        "phone": null,
+        "url": null,
+        "parking": null,
+        "notes": null,
+        "bookingRef": null
+      }
+    },
+    {
+      "id": 4,
+      "date": "2026-10-06",
+      "dayLabel": "Jour 4",
+      "from": "Barcelonnette",
+      "to": "Menton",
+      "distanceKm": 286,
+      "ridingTime": "6h28",
+      "summary": "La descente vers la mer. La Bonette au lever du jour, la Lombarde et un second passage en Italie, puis le Turini avant de basculer sur la Méditerranée. On part à 2 700 m et on arrive au niveau de la mer.",
+      "highlights": [
+        "Cime de la Bonette, la plus haute route d'Europe",
+        "Col de la Lombarde et retour d'Italie par Vinadio",
+        "Col de Turini, puis arrivée sur Menton"
+      ],
+      "cols": [
+        { "name": "Cime de la Bonette", "altitude": 2802 },
+        { "name": "Col de la Bonette", "altitude": 2715 },
+        { "name": "Col de la Lombarde", "altitude": 2350 },
+        { "name": "Col Saint-Martin", "altitude": 1500 },
+        { "name": "Col de Turini", "altitude": 1607 }
+      ],
+      "waypoints": [
+        "Barcelonnette",
+        "Jausiers",
+        "Saint-Étienne-de-Tinée",
+        "Isola 2000",
+        "Vinadio",
+        "Saint-Martin-Vésubie",
+        "Sospel",
+        "Menton"
+      ],
+      "gpxFile": "gpx/J4.gpx",
+      "ridePlannerUrl": null,
+      "options": [],
+      "warnings": [
+        "Col de la Bonette et Col de la Lombarde : exposés, fermeture sur neige possible sans préavis début octobre.",
+        "La Lombarde côté italien est étroite et souvent gravillonnée. Rythme prudent.",
+        "Arrivée sur Menton en fin de journée : circulation dense sur la côte."
+      ],
+      "hotel": {
+        "name": "Hôtel de Londres",
+        "city": "Menton",
+        "status": "à réserver",
+        "address": null,
+        "phone": null,
+        "url": null,
+        "parking": null,
+        "notes": null,
+        "bookingRef": null
+      }
+    },
+    {
+      "id": 5,
+      "date": "2026-10-07",
+      "dayLabel": "Jour 5",
+      "from": "Menton",
+      "to": "Castellane",
+      "distanceKm": 233,
+      "ridingTime": "4h39",
+      "summary": "Journée courte et spectaculaire. On quitte la côte par Braus et Castillon, puis on remonte les deux gorges rouges du Cians et de Daluis. Étape la plus légère du voyage, idéale pour prendre son temps.",
+      "highlights": [
+        "Lacets du Col de Braus au-dessus de Sospel",
+        "Gorges du Cians, schistes rouges",
+        "Gorges de Daluis en corniche"
+      ],
+      "cols": [
+        { "name": "Col de Braus", "altitude": 1002 },
+        { "name": "Col de Castillon", "altitude": 706 },
+        { "name": "Col de Toutes Aures", "altitude": 1124 }
+      ],
+      "waypoints": [
+        "Menton",
+        "Sospel",
+        "L'Escarène",
+        "Touët-sur-Var",
+        "Beuil",
+        "Guillaumes",
+        "Entrevaux",
+        "Castellane"
+      ],
+      "gpxFile": "gpx/J5.gpx",
+      "ridePlannerUrl": null,
+      "options": [
+        {
+          "name": "Col de la Couillole",
+          "altitude": 1678,
+          "description": "Aller-retour depuis Beuil, montée sur la Tinée et demi-tour au col.",
+          "addsKm": 35,
+          "addsTime": "50 min",
+          "decisionPoint": "À Beuil, à la sortie des Gorges du Cians"
+        }
+      ],
+      "warnings": [
+        "Gorges du Cians et de Daluis : tunnels non éclairés et chaussée humide en sous-bois. Visière claire recommandée.",
+        "Chutes de pierres fréquentes dans les deux gorges après un épisode pluvieux."
+      ],
+      "hotel": {
+        "name": "Hôtel du Roc",
+        "city": "Castellane",
+        "status": "à réserver",
+        "address": null,
+        "phone": null,
+        "url": null,
+        "parking": null,
+        "notes": null,
+        "bookingRef": null
+      }
+    },
+    {
+      "id": 6,
+      "date": "2026-10-08",
+      "dayLabel": "Jour 6",
+      "from": "Castellane",
+      "to": "Die",
+      "distanceKm": 259,
+      "ridingTime": "4h17",
+      "summary": "Le Verdon au réveil par la Route des Crêtes, puis la remontée vers le Diois par le Col de Cabre. Étape de transition avant le grand final, avec la plus belle heure de moto du voyage sur les balcons du canyon.",
+      "highlights": [
+        "Route des Crêtes au-dessus des Gorges du Verdon",
+        "Traversée du plateau de Valensole et de la Drôme provençale",
+        "Col de Cabre, entrée dans le Diois"
+      ],
+      "cols": [
+        { "name": "Col d'Ayen", "altitude": 1032 },
+        { "name": "Col de Cabre", "altitude": 1180 }
+      ],
+      "waypoints": [
+        "Castellane",
+        "La Palud-sur-Verdon",
+        "Route des Crêtes",
+        "Moustiers-Sainte-Marie",
+        "Sisteron",
+        "Serres",
+        "Die"
+      ],
+      "gpxFile": "gpx/J6.gpx",
+      "ridePlannerUrl": null,
+      "options": [
+        {
+          "name": "Rive sud du Verdon",
+          "altitude": null,
+          "description": "Corniche Sublime par la D71, Balcons de la Mescla et Aiguines au lieu de la remontée directe.",
+          "addsKm": 55,
+          "addsTime": "1h10",
+          "decisionPoint": "À Castellane au départ, le choix se fait avant d'entrer dans les gorges"
+        }
+      ],
+      "warnings": [
+        "La Route des Crêtes est en sens unique sur une partie de son tracé. Respecter le sens de circulation.",
+        "Étape courte : 4 h 17 de roulage seulement, à rallonger éventuellement par l'option rive sud."
+      ],
+      "hotel": {
+        "name": "Hôtel des Alpes",
+        "city": "Die",
+        "status": "à réserver",
+        "address": null,
+        "phone": null,
+        "url": null,
+        "parking": null,
+        "notes": null,
+        "bookingRef": null
+      }
+    },
+    {
+      "id": 7,
+      "date": "2026-10-09",
+      "dayLabel": "Jour 7",
+      "from": "Die",
+      "to": "La Conversion",
+      "distanceKm": 567,
+      "ridingTime": "8h35",
+      "summary": "Le grand final, et de loin la journée la plus longue. Vercors le matin avec Rousset, la Machine et Combe Laval, puis remontée par le Lautaret, le Petit-Saint-Bernard, la vallée d'Aoste et retour en Suisse par le Grand-Saint-Bernard. Ambitieux, et assumé comme tel.",
+      "highlights": [
+        "Combe Laval et le Col de la Machine, routes taillées en balcon",
+        "Gorges de la Bourne au cœur du Vercors",
+        "Trois cols au-dessus de 2 000 m dans l'après-midi",
+        "Retour en Suisse par le Col du Grand-Saint-Bernard"
+      ],
+      "cols": [
+        { "name": "Col de Rousset", "altitude": 1254 },
+        { "name": "Col de la Machine", "altitude": 1011 },
+        { "name": "Col du Lautaret", "altitude": 2058 },
+        { "name": "Col du Petit-Saint-Bernard", "altitude": 2188 },
+        { "name": "Col du Grand-Saint-Bernard", "altitude": 2469 }
+      ],
+      "waypoints": [
+        "Die",
+        "Col de Rousset",
+        "Saint-Jean-en-Royans",
+        "Villard-de-Lans",
+        "Grenoble",
+        "Bourg-d'Oisans",
+        "Briançon",
+        "Bourg-Saint-Maurice",
+        "Aoste",
+        "Martigny",
+        "La Conversion"
+      ],
+      "gpxFile": "gpx/J7.gpx",
+      "ridePlannerUrl": null,
+      "options": [
+        {
+          "name": "Gorges du Nan ou Route de Presles",
+          "altitude": null,
+          "description": "Crochet par une des deux routes en balcon du Vercors occidental, avant de redescendre sur Grenoble.",
+          "addsKm": null,
+          "addsTime": "30 à 40 min",
+          "decisionPoint": "À Saint-Jean-en-Royans, seulement si l'avance sur l'horaire le permet"
+        }
+      ],
+      "warnings": [
+        "Journée la plus longue du voyage : 8 h 35 de roulage, hors pauses. Départ au plus tôt, impérativement.",
+        "Col du Grand-Saint-Bernard : fermeture habituelle vers la mi-octobre (14 octobre en 2024, 20 octobre en 2025). Vérifier l'ouverture la veille.",
+        "Repli si le Grand-Saint-Bernard est fermé : tunnel routier du Grand-Saint-Bernard, ouvert toute l'année, environ 18.50 CHF pour une moto.",
+        "Col du Petit-Saint-Bernard : chantier actif côté français, à l'origine de fermetures anticipées ces dernières saisons.",
+        "Le tunnel du Col de la Machine a déjà fermé en semaine entre 8 h 30 et 16 h 30 début octobre. Vérifier avant de partir.",
+        "Trois cols au-dessus de 2 000 m en fin de journée, avec le froid et la nuit qui tombe tôt. Prévoir l'équipement chaud accessible."
+      ],
+      "hotel": null
+    }
+  ],
+  "practical": {
+    "sections": [
+      {
+        "title": "Numéros utiles",
+        "items": [
+          "Secours européen : 112",
+          "Secours Suisse, ambulance : 144",
+          "Secours Suisse, police : 117",
+          "Sauvetage aérien Rega, Suisse : 1414",
+          "SAMU France : 15",
+          "Police France : 17",
+          "Soccorso Italia : 112"
+        ]
+      },
+      {
+        "title": "État des routes et des cols",
+        "items": [
+          "Savoie : savoie-route.fr",
+          "Hautes-Alpes : inforoute.hautes-alpes.fr",
+          "Alpes-de-Haute-Provence : inforoute04.fr",
+          "Alpes-Maritimes : inforoutes06.fr",
+          "Drôme : ladrome.fr",
+          "Suisse : tcs.ch, rubrique état des routes",
+          "À consulter systématiquement la veille au soir pour l'étape du lendemain."
+        ]
+      },
+      {
+        "title": "Essence en montagne",
+        "items": [
+          "Faire le plein dans la vallée avant d'attaquer une série de cols.",
+          "Beaucoup de stations de village ferment le dimanche et après 19 h.",
+          "Autonomie utile à viser : 200 km entre deux pleins.",
+          "Prévoir une carte de paiement acceptée aux automates français et italiens.",
+          "Points de plein sûrs : Bourg-Saint-Maurice, Saint-Jean-de-Maurienne, Briançon, Barcelonnette, Menton, Castellane, Die, Grenoble, Martigny."
+        ]
+      },
+      {
+        "title": "Équipement",
+        "items": [
+          "Veste et pantalon avec doublure thermique : il peut geler à 2 500 m en octobre.",
+          "Sous-gants, tour de cou, gants d'hiver de rechange.",
+          "Visière claire pour les tunnels du Cians et de Daluis.",
+          "Pluie : sur-combinaison accessible sans ouvrir les valises.",
+          "Bouchons d'oreille pour les longues étapes.",
+          "Chargeur USB et support téléphone.",
+          "Câble de recharge pour l'intercom."
+        ]
+      },
+      {
+        "title": "Papiers et frontières",
+        "items": [
+          "Carte d'identité ou passeport en cours de validité.",
+          "Permis de conduire, carte grise, attestation d'assurance.",
+          "Carte verte pour l'Italie.",
+          "Vignette autoroutière suisse si passage sur autoroute au retour.",
+          "Tunnel du Grand-Saint-Bernard : environ 18.50 CHF pour une moto, paiement sur place."
+        ]
+      },
+      {
+        "title": "Avant de partir chaque matin",
+        "items": [
+          "Vérifier l'ouverture des cols de l'étape.",
+          "Météo à l'altitude du point haut, pas à celle de la vallée.",
+          "Pression des pneus à froid.",
+          "Niveau d'huile et tension de chaîne.",
+          "Point sur l'heure d'arrivée visée et sur les points de décision de la journée."
+        ]
+      }
+    ]
+  }
+}

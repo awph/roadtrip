@@ -1,0 +1,17 @@
+{
+  "name": "roadtrip-alpes-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Road book statique et hors-ligne du road trip moto Alpes 2026.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "verifier": "node scripts/check-langue.mjs",
+    "icons": "node scripts/generate-icons.mjs",
+    "preview": "node build.mjs && node scripts/serve.mjs",
+    "test": "node build.mjs && node scripts/check-langue.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
