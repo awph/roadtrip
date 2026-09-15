@@ -1,73 +1,132 @@
-/* Design tokens — every colour, size and spacing value the site uses.
-   This is the single file to swap when the visual identity changes. */
+/* Design tokens — identity "Plaque de col" (variante 1a du canevas Claude Design).
+   Every colour, size and spacing value the site uses lives here. */
+
+/* Self-hosted, Latin subset only: no third-party request, no blocking font
+   fetch, and the faces are precached with the rest of the site. */
+@font-face {
+  font-family: "Archivo Black";
+  src: url("../fonts/archivo-black-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("../fonts/space-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("../fonts/space-mono-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* ---- Colour ---------------------------------------------------------- */
-  --c-bg: #0E0E0E;
-  --c-surface: #1A1A1A;
-  --c-surface-raised: #212121;
-  --c-accent: #E8622C;
-  --c-brass: #C9A227;
-  --c-text: #F2EFE9;
-  --c-text-muted: #9A948C;
-  --c-alert: #D93A2B;
-  --c-alert-bg: #2A1512;
-  --c-success: #6B8E4E;
-  --c-success-bg: #18200F;
-  --c-hairline: #33302C;
-  --c-hairline-strong: #4A4640;
+  --c-paper: #f4f0e6;        /* fond d'écran, crème */
+  --c-card: #ffffff;         /* plaques de col */
+  --c-ink: #14110d;          /* encre, en-têtes, cadres */
+  --c-red: #c8362a;          /* accent, vigilance, col sélectionné */
+  /* Le même rouge sur l'encre ne donne que 3,6:1 : éclairci pour le texte
+     posé sur fond sombre, comme le canevas le fait déjà pour ses étiquettes. */
+  --c-red-on-ink: #f2603f;
+  --c-body: #4a453c;         /* texte courant secondaire */
+  /* Le crème du canevas donne 3,3:1 avec son gris #8a8276 : sous le plancher
+     WCAG AA, et ce site se lit dehors, en plein soleil. Gris réchauffé. */
+  --c-muted: #6b6459;        /* libellés en capitales */
+  --c-rule: #d5cdb8;         /* filet fin sur crème */
+
+  /* Sur fond encre (panneau déplié, en-tête) */
+  --c-on-ink: #f4f0e6;
+  --c-on-ink-muted: #9a9384;
+  --c-on-ink-body: #cfc9bc;
+  --c-on-ink-rule: #3a352e;
+  --c-on-ink-tag: #4a453c;
+  --c-on-ink-red: #ff9c8f;
+
+  /* États de réservation */
+  --c-green: #3d6b35;
+  --c-green-ink: #f4f0e6;
 
   /* ---- Typography ------------------------------------------------------ */
-  --font-display: "Oswald", "Archivo Narrow", "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
-  --font-body: "Inter", "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-numeric: var(--font-display);
+  --font-display: "Archivo Black", "Archivo", Impact, system-ui, sans-serif;
+  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
+  /* The canvas is drawn at 14–15px body on a 390px artboard. Scaled up to a
+     17px floor here: this is read outdoors, in sun, with gloves on. */
   --fs-base: 17px;
-  --fs-sm: 0.8235rem;   /* 14px */
-  --fs-md: 1rem;        /* 17px */
-  --fs-lg: 1.176rem;    /* 20px */
-  --fs-xl: 1.529rem;    /* 26px */
-  --fs-2xl: 2rem;       /* 34px */
-  --fs-3xl: 2.588rem;   /* 44px */
+  --fs-label: 0.7647rem;  /* 13px — capitales espacées */
+  --fs-sm: 0.8824rem;     /* 15px */
+  --fs-md: 1rem;          /* 17px */
+  --fs-lg: 1.1176rem;     /* 19px */
+  --fs-xl: 1.4118rem;     /* 24px */
+  --fs-2xl: 1.7647rem;    /* 30px */
+  --fs-3xl: 2.1176rem;    /* 36px */
+  --fs-4xl: 3.1765rem;    /* 54px */
 
-  --lh-tight: 1.1;
+  --lh-tight: 1.02;
   --lh-snug: 1.3;
   --lh-normal: 1.55;
 
-  --ls-display: 0.04em;
-  --ls-label: 0.12em;
+  --ls-label: 0.2em;
+  --ls-eyebrow: 0.24em;
+  --ls-display: 0.005em;
 
   /* ---- Space ----------------------------------------------------------- */
   --sp-1: 0.25rem;
   --sp-2: 0.5rem;
   --sp-3: 0.75rem;
   --sp-4: 1rem;
-  --sp-5: 1.5rem;
-  --sp-6: 2rem;
-  --sp-7: 3rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.75rem;
+  --sp-7: 2.5rem;
 
   /* ---- Shape ----------------------------------------------------------- */
-  --radius: 5px;
-  --radius-sm: 4px;
-  --hairline: 1px solid var(--c-hairline);
-  --hairline-strong: 1px solid var(--c-hairline-strong);
-  --border-active: 2px solid var(--c-accent);
+  /* No rounded corners anywhere: the register is the enamel sign. */
+  --border: 2px solid var(--c-ink);
+  --border-red: 2px solid var(--c-red);
+  --rule: 1px solid var(--c-rule);
 
   /* ---- Layout ---------------------------------------------------------- */
-  --measure: 46rem;
+  --measure: 34rem;
   --tap-min: 48px;
   --tabbar-height: 62px;
-  --gutter: var(--sp-4);
+  --gutter: 1.25rem;
 
   /* ---- Safe areas ------------------------------------------------------ */
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
-}
-
-@media (min-width: 40rem) {
-  :root {
-    --gutter: var(--sp-5);
-  }
 }

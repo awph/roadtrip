@@ -11,9 +11,9 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(root, 'public/icons');
 
-const BG = [0x0e, 0x0e, 0x0e];
-const ACCENT = [0xe8, 0x62, 0x2c];
-const BRASS = [0xc9, 0xa2, 0x27];
+const BG = [0xf4, 0xf0, 0xe6];
+const ACCENT = [0xc8, 0x36, 0x2a];
+const BRASS = [0x14, 0x11, 0x0d];
 
 // The mark: a pass profile over a road band — the same motif as the
 // elevation charts, in unit coordinates (0..1, y down).

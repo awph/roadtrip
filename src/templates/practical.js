@@ -8,6 +8,7 @@ export function practicalPage({ base, trip }) {
   const { meta, practical } = trip;
 
   const content = `<header class="pagehead">
+  <p class="pagehead__eyebrow"><span class="masthead__dash" aria-hidden="true"></span>Road book · Alpes</p>
   <h1 class="pagehead__title">Pratique</h1>
   <p class="pagehead__lede">Numéros, états de route et rappels à garder sous la main.</p>
 </header>
@@ -36,11 +37,11 @@ function sectionBlock(section, index) {
         <span class="accordion__title">${text(section.title)}</span>
         <span class="accordion__chevron" aria-hidden="true"></span>
       </summary>
-      <ul class="bullets">
+      <ul class="marks">
         ${section.items.map((item) => {
           const rendered = renderItem(item);
           const isRow = rendered.startsWith('<a class="rowlink"');
-          return `<li${isRow ? ' class="bullets__row"' : ''}>${rendered}</li>`;
+          return `<li${isRow ? ' class="marks__row"' : ''}>${rendered}</li>`;
         }).join('\n        ')}
       </ul>
     </details>`;

@@ -99,32 +99,13 @@ export function routeMap(days, mapPoints = {}) {
 
   // Labels sit centred above or below their node: centred text keeps long
   // names such as "Bourg-Saint-Maurice" inside the viewBox at phone width.
+  // The legs carry no numbers: the numbered day cards sit directly below the
+  // map, and numbering the legs only fought the place names for room.
   const labels = layoutLabels(placed);
 
   const segments = placed.map((node, i) => {
     const next = placed[(i + 1) % placed.length];
     return `<line class="routemap__leg" x1="${node.x.toFixed(1)}" y1="${node.y.toFixed(1)}" x2="${next.x.toFixed(1)}" y2="${next.y.toFixed(1)}" />`;
-  }).join('');
-
-  // Leg numbers sit off the line, on the outside of the loop, and slide
-  // along the leg until they clear every place name — the names are drawn
-  // last, with a background halo, and would otherwise erase them.
-  const centre = centroid(placed);
-  const legLabels = placed.map((node, i) => {
-    const next = placed[(i + 1) % placed.length];
-    const outX = (node.x + next.x) / 2 - centre.x;
-    const outY = (node.y + next.y) / 2 - centre.y;
-    const len = Math.hypot(outX, outY) || 1;
-
-    let best = null;
-    for (const t of [0.5, 0.4, 0.6, 0.32, 0.68, 0.25, 0.75]) {
-      const px = node.x + (next.x - node.x) * t + (outX / len) * 26;
-      const py = node.y + (next.y - node.y) * t + (outY / len) * 26;
-      if (!best) best = { px, py };
-      if (!nearLabel(px, py, placed, labels)) { best = { px, py }; break; }
-    }
-
-    return `<text class="routemap__leg-label" x="${best.px.toFixed(1)}" y="${(best.py + 8).toFixed(1)}" text-anchor="middle">${i + 1}</text>`;
   }).join('');
 
   const markers = placed.map((node, i) => {
@@ -138,15 +119,18 @@ export function routeMap(days, mapPoints = {}) {
      aria-label="Schéma de la boucle : ${escapeHtml(stops.join(', '))}"
      preserveAspectRatio="xMidYMid meet">
     ${segments}
-    ${legLabels}
     ${markers}
   </svg>`;
 }
 
-const LABEL_FONT = 25;
-const LABEL_ABOVE = -26;
-const LABEL_BELOW = 40;
-const LABEL_GAP = 30; // minimum vertical clearance between two names
+// Must track .routemap__label in app.css. Archivo Black is a heavy, wide
+// face: roughly 0.62 em per character, well above a normal sans.
+const LABEL_FONT = 24;
+const LABEL_EM = 0.62;
+
+const LABEL_ABOVE = -28;
+const LABEL_BELOW = 42;
+const LABEL_GAP = 34; // minimum vertical clearance between two names
 
 /**
  * Places each name above or below its stop — above when the stop is a local
@@ -154,7 +138,7 @@ const LABEL_GAP = 30; // minimum vertical clearance between two names
  * there — then nudges any pair that still overlaps.
  */
 function layoutLabels(nodes) {
-  const width = (name) => name.length * LABEL_FONT * 0.52;
+  const width = (name) => name.length * LABEL_FONT * LABEL_EM;
 
   const ys = nodes.map((node, i) => {
     const before = nodes[(i - 1 + nodes.length) % nodes.length];
@@ -187,21 +171,6 @@ function layoutLabels(nodes) {
   }
 
   return ys;
-}
-
-/** True when (x, y) falls inside the painted box of any place name. */
-function nearLabel(x, y, nodes, labelYs) {
-  return nodes.some((node, i) => {
-    const halfWidth = (node.name.length * LABEL_FONT * 0.52) / 2 + 8;
-    return Math.abs(x - node.x) < halfWidth && Math.abs(y - labelYs[i]) < 24;
-  });
-}
-
-function centroid(nodes) {
-  return {
-    x: nodes.reduce((sum, n) => sum + n.x, 0) / nodes.length,
-    y: nodes.reduce((sum, n) => sum + n.y, 0) / nodes.length,
-  };
 }
 
 /** Equirectangular projection, corrected for longitude shrink at latitude. */

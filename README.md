@@ -58,7 +58,7 @@ Une fois la réservation faite, remplir les champs et changer le statut :
 }
 ```
 
-- `status` accepte exactement trois valeurs : `"à réserver"` (badge laiton),
+- `status` accepte exactement trois valeurs : `"à réserver"` (badge noir),
   `"réservé"` (badge vert) et `"confirmé"` (badge vert plein).
 - Un champ laissé à `null` disparaît simplement de la page, sans rien casser.
 - Dès qu'une `address` est renseignée, elle devient un lien qui ouvre
@@ -95,6 +95,41 @@ ordre qui dessine le profil d'altitude :
 `altitude` est un nombre, en mètres. On peut ajouter `"optional": true` à un
 col emprunté seulement en cas de variante : il apparaît alors en pointillé sur
 le profil et marqué « variante » dans la liste.
+
+### Détailler un col
+
+Sur la page d'une étape, chaque col se déplie au toucher. Le panneau n'affiche
+que les champs renseignés — un col sans détail montre simplement ses deux
+boutons. Tous ces champs sont facultatifs :
+
+```json
+{
+  "name": "Col de la Ramaz",
+  "altitude": 1619,
+  "climbKm": 13.4,
+  "gradient": 6.1,
+  "hairpins": 21,
+  "climbTime": "0h35",
+  "side": "Ouest, depuis Taninges",
+  "surface": ["Revêtement bon", "Gravillons en épingle"],
+  "lastFuel": "Taninges · 12 km",
+  "stop": "Plateau de Praz de Lys",
+  "openWindow": "juin → octobre",
+  "notes": "Revêtement neuf sur les six derniers kilomètres.",
+  "coords": [46.146, 6.592]
+}
+```
+
+- `climbKm` et `gradient` sont des nombres : le site les affiche avec la
+  virgule décimale française (`13,4 km · 6,1 %`).
+- `surface` est une liste d'étiquettes courtes.
+- `coords` sert au bouton « Y aller ». Sans coordonnées, le bouton cherche le
+  col par son nom, ce qui suffit dans la plupart des cas.
+
+Les chiffres de montée, de pente, d'épingles et de revêtement ne sont pas
+fournis : ils se relèvent sur vos propres traces. Seules les informations
+réellement connues (risques de fermeture, versants, repli du
+Grand-Saint-Bernard) sont déjà saisies.
 
 ### Ajouter une étape
 
@@ -178,6 +213,10 @@ git push
 GitHub Actions reconstruit et publie le site automatiquement
 (voir `.github/workflows/deploy.yml`). Compter une à deux minutes.
 
+À faire une seule fois, à la main : dans les réglages du dépôt,
+**Settings → Pages → Source**, choisir **GitHub Actions**. Sans cela le
+workflow se termine en erreur au moment de publier.
+
 Sur le téléphone, la nouvelle version est récupérée à la prochaine ouverture
 avec du réseau : le service worker sert d'abord la copie enregistrée, puis
 télécharge la mise à jour en arrière-plan pour la fois suivante.
@@ -190,7 +229,7 @@ Ouvrir le site une fois **avec du réseau**, puis « Ajouter à l'écran d'accue
 Il s'ouvre alors en plein écran, sans barre de navigateur, et fonctionne ensuite
 sans aucune connexion.
 
-Un bandeau laiton « Hors ligne — contenu enregistré » apparaît dès que le
+Un bandeau rouge « Hors ligne — contenu enregistré » apparaît dès que le
 réseau est perdu.
 
 Sur une page d'étape, on passe au jour suivant ou précédent **en balayant
@@ -221,6 +260,7 @@ npm run icons      # régénère les icônes PNG depuis scripts/generate-icons.m
 | `src/lib/format.js` | formats français (dates, nombres, durées, espaces insécables) |
 | `src/lib/profile.js` | profils d'altitude et schéma de boucle, en SVG |
 | `src/sw.template.js` | service worker (stratégie cache d'abord) |
+| `public/fonts/` | polices auto-hébergées (sous-ensemble latin) |
 | `public/` | fichiers copiés tels quels (icônes, GPX, `app.js`) |
 | `build.mjs` | le générateur complet |
 
@@ -234,6 +274,24 @@ BASE_PATH=/roadtrip/ npm run build
 ```
 
 Sur Netlify : commande `npm run build`, dossier publié `dist`.
+
+### Identité visuelle
+
+L'habillage reprend la variante « Plaque de col » du canevas Claude Design :
+fond crème, encre presque noire, rouge pour tout ce qui presse, cadres de 2 px
+et angles vifs. Archivo Black pour les titres et les altitudes, Archivo pour le
+texte courant, Space Mono pour les petits chiffres.
+
+Les polices sont **auto-hébergées** dans `public/fonts/` (sous-ensemble latin,
+108 Ko au total) et mises en cache avec le reste du site : aucune requête vers
+Google Fonts, donc rien à charger dans un col sans réseau.
+
+Deux écarts assumés par rapport au canevas, tous deux au nom de la lisibilité
+en extérieur :
+
+- le corps de texte est porté à 17 px, contre 14–15 px sur la maquette ;
+- le gris des libellés et le rouge posé sur fond sombre sont légèrement
+  éclaircis, les valeurs du canevas passant sous le seuil WCAG AA.
 
 ### Langue
 

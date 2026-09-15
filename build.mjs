@@ -164,8 +164,8 @@ function renderManifest(trip) {
     scope: base,
     display: 'standalone',
     orientation: 'portrait-primary',
-    background_color: '#0E0E0E',
-    theme_color: '#0E0E0E',
+    background_color: '#f4f0e6',
+    theme_color: '#14110d',
     icons: [
       { src: `${base}icons/icone.svg`, sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
       { src: `${base}icons/icone-192.png`, sizes: '192x192', type: 'image/png', purpose: 'any' },

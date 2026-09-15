@@ -4,17 +4,42 @@
     "subtitle": "Lausanne — Méditerranée — Lausanne",
     "dates": "3 au 9 octobre 2026",
     "shortDates": "3–9 oct. 2026",
-    "riders": ["Alex", "Pilote 2", "Pilote 3"],
+    "riders": [
+      "Alex",
+      "Pilote 2",
+      "Pilote 3"
+    ],
     "description": "Road book d'une boucle moto de 7 jours entre le Léman et la Méditerranée, par les grands cols des Alpes.",
     "startYear": 2026,
     "mapPoints": {
-      "La Conversion": [46.51, 6.69],
-      "Bourg-Saint-Maurice": [45.62, 6.77],
-      "Briançon": [44.9, 6.64],
-      "Barcelonnette": [44.39, 6.65],
-      "Menton": [43.78, 7.5],
-      "Castellane": [43.85, 6.51],
-      "Die": [44.75, 5.37]
+      "La Conversion": [
+        46.51,
+        6.69
+      ],
+      "Bourg-Saint-Maurice": [
+        45.62,
+        6.77
+      ],
+      "Briançon": [
+        44.9,
+        6.64
+      ],
+      "Barcelonnette": [
+        44.39,
+        6.65
+      ],
+      "Menton": [
+        43.78,
+        7.5
+      ],
+      "Castellane": [
+        43.85,
+        6.51
+      ],
+      "Die": [
+        44.75,
+        5.37
+      ]
     }
   },
   "days": [
@@ -33,14 +58,40 @@
         "Descente du Cormet de Roselend sur le lac de barrage"
       ],
       "cols": [
-        { "name": "Pas de Morgins", "altitude": 1369 },
-        { "name": "Col du Corbier", "altitude": 1237 },
-        { "name": "Col de l'Encrenaz", "altitude": 1433 },
-        { "name": "Col de la Ramaz", "altitude": 1619 },
-        { "name": "Col de la Colombière", "altitude": 1618 },
-        { "name": "Col des Aravis", "altitude": 1486 },
-        { "name": "Col des Saisies", "altitude": 1650 },
-        { "name": "Cormet de Roselend", "altitude": 1968 }
+        {
+          "name": "Pas de Morgins",
+          "altitude": 1369
+        },
+        {
+          "name": "Col du Corbier",
+          "altitude": 1237
+        },
+        {
+          "name": "Col de l'Encrenaz",
+          "altitude": 1433
+        },
+        {
+          "name": "Col de la Ramaz",
+          "altitude": 1619,
+          "notes": "Peut fermer sur neige dès le début octobre. Vérifier la veille sur savoie-route.fr."
+        },
+        {
+          "name": "Col de la Colombière",
+          "altitude": 1618
+        },
+        {
+          "name": "Col des Aravis",
+          "altitude": 1486
+        },
+        {
+          "name": "Col des Saisies",
+          "altitude": 1650
+        },
+        {
+          "name": "Cormet de Roselend",
+          "altitude": 1968,
+          "notes": "Exposé au gel matinal. Prudence sur les zones d'ombre en descente."
+        }
       ],
       "waypoints": [
         "La Conversion",
@@ -88,12 +139,32 @@
         "Montée Télégraphe puis Galibier, descente par le Lautaret sur Briançon"
       ],
       "cols": [
-        { "name": "Col de l'Iseran", "altitude": 2764 },
-        { "name": "Col du Glandon", "altitude": 1924 },
-        { "name": "Col de la Croix de Fer", "altitude": 2067 },
-        { "name": "Col du Télégraphe", "altitude": 1566 },
-        { "name": "Col du Galibier", "altitude": 2642 },
-        { "name": "Col du Lautaret", "altitude": 2058 }
+        {
+          "name": "Col de l'Iseran",
+          "altitude": 2764,
+          "notes": "Plus haut col routier des Alpes. Fermeture possible sur neige sans préavis en octobre."
+        },
+        {
+          "name": "Col du Glandon",
+          "altitude": 1924
+        },
+        {
+          "name": "Col de la Croix de Fer",
+          "altitude": 2067
+        },
+        {
+          "name": "Col du Télégraphe",
+          "altitude": 1566
+        },
+        {
+          "name": "Col du Galibier",
+          "altitude": 2642,
+          "notes": "Fermeture possible sur neige en octobre. Repli par le Lautaret depuis Saint-Michel-de-Maurienne."
+        },
+        {
+          "name": "Col du Lautaret",
+          "altitude": 2058
+        }
       ],
       "waypoints": [
         "Bourg-Saint-Maurice",
@@ -148,12 +219,35 @@
         "Boucle Allos / Champs / Cayolle pour finir"
       ],
       "cols": [
-        { "name": "Col d'Izoard", "altitude": 2360 },
-        { "name": "Col Agnel", "altitude": 2744 },
-        { "name": "Col de Vars", "altitude": 2108 },
-        { "name": "Col d'Allos", "altitude": 2250 },
-        { "name": "Col des Champs", "altitude": 2095 },
-        { "name": "Col de la Cayolle", "altitude": 2326 }
+        {
+          "name": "Col d'Izoard",
+          "altitude": 2360
+        },
+        {
+          "name": "Col Agnel",
+          "altitude": 2744,
+          "notes": "Deuxième plus haut col routier des Alpes. Fermeture fréquente en octobre, côté français comme côté italien.",
+          "side": "Français, puis Pontechianale"
+        },
+        {
+          "name": "Col de Vars",
+          "altitude": 2108
+        },
+        {
+          "name": "Col d'Allos",
+          "altitude": 2250,
+          "notes": "Route étroite sans parapet, fermée dès la première neige."
+        },
+        {
+          "name": "Col des Champs",
+          "altitude": 2095,
+          "notes": "Route étroite sans parapet, fermée dès la première neige."
+        },
+        {
+          "name": "Col de la Cayolle",
+          "altitude": 2326,
+          "notes": "Route étroite sans parapet, fermée dès la première neige."
+        }
       ],
       "waypoints": [
         "Briançon",
@@ -201,11 +295,30 @@
         "Col de Turini, puis arrivée sur Menton"
       ],
       "cols": [
-        { "name": "Cime de la Bonette", "altitude": 2802 },
-        { "name": "Col de la Bonette", "altitude": 2715 },
-        { "name": "Col de la Lombarde", "altitude": 2350 },
-        { "name": "Col Saint-Martin", "altitude": 1500 },
-        { "name": "Col de Turini", "altitude": 1607 }
+        {
+          "name": "Cime de la Bonette",
+          "altitude": 2802,
+          "notes": "Plus haute route d'Europe. Exposée, fermeture sur neige possible sans préavis."
+        },
+        {
+          "name": "Col de la Bonette",
+          "altitude": 2715,
+          "notes": "Exposé, fermeture sur neige possible sans préavis début octobre."
+        },
+        {
+          "name": "Col de la Lombarde",
+          "altitude": 2350,
+          "notes": "Versant italien étroit et souvent gravillonné. Fermeture sur neige possible.",
+          "side": "Isola 2000, puis Vinadio"
+        },
+        {
+          "name": "Col Saint-Martin",
+          "altitude": 1500
+        },
+        {
+          "name": "Col de Turini",
+          "altitude": 1607
+        }
       ],
       "waypoints": [
         "Barcelonnette",
@@ -252,9 +365,18 @@
         "Gorges de Daluis en corniche"
       ],
       "cols": [
-        { "name": "Col de Braus", "altitude": 1002 },
-        { "name": "Col de Castillon", "altitude": 706 },
-        { "name": "Col de Toutes Aures", "altitude": 1124 }
+        {
+          "name": "Col de Braus",
+          "altitude": 1002
+        },
+        {
+          "name": "Col de Castillon",
+          "altitude": 706
+        },
+        {
+          "name": "Col de Toutes Aures",
+          "altitude": 1124
+        }
       ],
       "waypoints": [
         "Menton",
@@ -309,8 +431,14 @@
         "Col de Cabre, entrée dans le Diois"
       ],
       "cols": [
-        { "name": "Col d'Ayen", "altitude": 1032 },
-        { "name": "Col de Cabre", "altitude": 1180 }
+        {
+          "name": "Col d'Ayen",
+          "altitude": 1032
+        },
+        {
+          "name": "Col de Cabre",
+          "altitude": 1180
+        }
       ],
       "waypoints": [
         "Castellane",
@@ -365,11 +493,31 @@
         "Retour en Suisse par le Col du Grand-Saint-Bernard"
       ],
       "cols": [
-        { "name": "Col de Rousset", "altitude": 1254 },
-        { "name": "Col de la Machine", "altitude": 1011 },
-        { "name": "Col du Lautaret", "altitude": 2058 },
-        { "name": "Col du Petit-Saint-Bernard", "altitude": 2188 },
-        { "name": "Col du Grand-Saint-Bernard", "altitude": 2469 }
+        {
+          "name": "Col de Rousset",
+          "altitude": 1254
+        },
+        {
+          "name": "Col de la Machine",
+          "altitude": 1011,
+          "notes": "Le tunnel a déjà fermé en semaine entre 8 h 30 et 16 h 30 début octobre."
+        },
+        {
+          "name": "Col du Lautaret",
+          "altitude": 2058
+        },
+        {
+          "name": "Col du Petit-Saint-Bernard",
+          "altitude": 2188,
+          "notes": "Chantier actif côté français, à l'origine de fermetures anticipées ces dernières saisons."
+        },
+        {
+          "name": "Col du Grand-Saint-Bernard",
+          "altitude": 2469,
+          "notes": "Repli si fermé : tunnel routier, ouvert toute l'année, environ 18.50 CHF pour une moto.",
+          "openWindow": "ferme habituellement vers la mi-octobre",
+          "side": "Vallée d'Aoste, retour en Suisse"
+        }
       ],
       "waypoints": [
         "Die",

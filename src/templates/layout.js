@@ -24,8 +24,8 @@ export function layout({
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${text(fullTitle)}</title>
 <meta name="description" content="${text(description)}">
-<meta name="theme-color" content="#0E0E0E">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#14110d">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="${text(meta.title)}">
@@ -42,7 +42,7 @@ export function layout({
 </head>
 <body class="${escapeHtml(bodyClass)}" data-base="${escapeHtml(base)}">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
-<div class="offline-flag" id="indicateur-hors-ligne" hidden>Hors ligne — contenu enregistré</div>
+<p class="offline-flag" id="indicateur-hors-ligne" hidden>Hors ligne — contenu enregistré</p>
 ${content}
 ${bottomNav(base, active)}
 <script src="${base}app.js" defer></script>

@@ -1,5 +1,5 @@
 import {
-  escapeHtml, formatDateLong, mapsUrl, statusSlug, telUrl, text,
+  escapeHtml, formatDateShort, mapsUrl, statusSlug, telUrl, text,
 } from '../lib/format.js';
 import { layout } from './layout.js';
 
@@ -7,21 +7,20 @@ export function hotelsPage({ base, trip }) {
   const { meta, days } = trip;
   const nights = days.filter((day) => day.hotel);
 
-  const counts = nights.reduce((acc, day) => {
-    const key = statusSlug(day.hotel.status || 'à réserver');
-    acc[key] = (acc[key] || 0) + 1;
-    return acc;
-  }, {});
+  const pending = nights.filter(
+    (day) => statusSlug(day.hotel.status || 'à réserver') === 'pending',
+  ).length;
 
-  const pending = counts.pending || 0;
-
-  const content = `<header class="pagehead">
-  <h1 class="pagehead__title">Hôtels</h1>
-  <p class="pagehead__lede">${text(nights.length > 1 ? `${nights.length} nuits sur la route.` : `${nights.length} nuit sur la route.`)} ${text(pending === 0
+  const lede = pending === 0
     ? 'Tout est réservé.'
     : pending === nights.length
       ? 'Rien n’est encore réservé.'
-      : `${pending} ${pending > 1 ? 'nuits restent' : 'nuit reste'} à réserver.`)}</p>
+      : `${pending} ${pending > 1 ? 'nuits restent' : 'nuit reste'} à réserver.`;
+
+  const content = `<header class="pagehead">
+  <p class="pagehead__eyebrow"><span class="masthead__dash" aria-hidden="true"></span>Road book · Alpes</p>
+  <h1 class="pagehead__title">Hôtels</h1>
+  <p class="pagehead__lede">${text(nights.length > 1 ? `${nights.length} nuits sur la route.` : `${nights.length} nuit sur la route.`)} ${text(lede)}</p>
 </header>
 
 <main id="contenu">
@@ -48,28 +47,28 @@ function hotelRow(base, day) {
 
   const actions = [];
   if (hotel.phone) {
-    actions.push(`<a class="button button--ghost" href="${escapeHtml(telUrl(hotel.phone))}">Appeler</a>`);
+    actions.push(`<a class="button button--red" href="${escapeHtml(telUrl(hotel.phone))}">Appeler</a>`);
   }
   if (hotel.address) {
-    actions.push(`<a class="button button--ghost" href="${escapeHtml(mapsUrl(hotel.address))}">Itinéraire</a>`);
+    actions.push(`<a class="button button--ink" href="${escapeHtml(mapsUrl(hotel.address))}">Y aller</a>`);
   }
   if (hotel.url) {
-    actions.push(`<a class="button button--ghost" href="${escapeHtml(hotel.url)}" rel="noopener">Site</a>`);
+    actions.push(`<a class="button button--ink" href="${escapeHtml(hotel.url)}" rel="noopener">Site</a>`);
   }
 
   return `<li class="hotelrow">
       <p class="hotelrow__night">
-        <span class="plate plate--small" aria-hidden="true">${day.id}</span>
-        <span class="hotelrow__date">${text(formatDateLong(day.date))}</span>
+        <span class="hotelrow__num">${String(day.id).padStart(2, '0')}</span>
+        <span class="hotelrow__date">${text(formatDateShort(day.date))} · ${text(day.to)}</span>
       </p>
-      <p class="hotelrow__head">
-        <span class="hotelrow__name">${text(hotel.name || 'Hébergement à trouver')}</span>
+      <div class="hotelrow__head">
+        <p class="hotelrow__name">${text(hotel.name || 'Hébergement à trouver')}</p>
         <span class="badge badge--${statusSlug(status)}">${text(status)}</span>
-      </p>
-      <p class="hotelrow__city">${text(hotel.address || hotel.city || day.to)}</p>
+      </div>
+      <p class="hotelrow__where">${text(hotel.address || hotel.city || day.to)}</p>
       ${hotel.parking ? `<p class="hotelrow__detail">${text(hotel.parking)}</p>` : ''}
       ${hotel.bookingRef ? `<p class="hotelrow__detail">Référence${' '}: ${text(hotel.bookingRef)}</p>` : ''}
-      ${actions.length ? `<div class="buttons">${actions.join('')}</div>` : ''}
-      <p class="hotelrow__more"><a class="textlink textlink--tap" href="${base}jour/${day.id}/">Voir l’étape</a></p>
+      ${actions.length ? `<p class="buttons">${actions.join('')}</p>` : ''}
+      <p class="hotelrow__more"><a class="textlink" href="${base}jour/${day.id}/">Voir l’étape →</a></p>
     </li>`;
 }
