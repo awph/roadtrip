@@ -630,6 +630,7 @@ a.hotel__cell .hotel__cell-value { color: var(--c-red); }
 /* ---- Buttons ------------------------------------------------------------- */
 
 .buttons { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.buttons--spaced { margin-top: var(--sp-4); }
 
 .button {
   display: inline-flex;

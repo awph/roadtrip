@@ -76,12 +76,13 @@ export function dayPage({ base, trip, day, previous, next }) {
     ${hotelBlock(day)}
   </section>
 
-  ${day.waypoints?.length ? `<section class="block" aria-labelledby="titre-itineraire">
+  ${day.waypoints?.length || day.ridePlannerUrl ? `<section class="block" aria-labelledby="titre-itineraire">
     <h2 class="block__title" id="titre-itineraire">Itinéraire</h2>
-    <p class="waypoints">${day.waypoints.map((w) => `<span class="waypoint">${text(w)}</span>`).join('<span class="waypoint__sep" aria-hidden="true">›</span>')}</p>
+    ${day.waypoints?.length ? `<p class="waypoints">${day.waypoints.map((w) => `<span class="waypoint">${text(w)}</span>`).join('<span class="waypoint__sep" aria-hidden="true">›</span>')}</p>` : ''}
+    ${day.ridePlannerUrl ? `<p class="buttons buttons--spaced">
+      <a class="button button--red" href="${escapeHtml(day.ridePlannerUrl)}" rel="noopener">Ouvrir dans Ride Planner</a>
+    </p>` : ''}
   </section>` : ''}
-
-  ${linksBlock(base, day)}
 </main>
 
 ${dayNav(base, previous, next)}`;
@@ -229,24 +230,6 @@ function hotelBlock(day) {
       ${hotel.notes ? `<p class="hotel__note">${text(hotel.notes)}</p>` : ''}
       ${status === 'à réserver' ? `<p class="hotel__note empty">Rien n'est encore réservé pour cette nuit.</p>` : ''}
     </div>`;
-}
-
-function linksBlock(base, day) {
-  const links = [];
-
-  if (day.ridePlannerUrl) {
-    links.push(`<a class="button button--red" href="${escapeHtml(day.ridePlannerUrl)}" rel="noopener">Itinéraire</a>`);
-  }
-  if (day.gpxFile) {
-    links.push(`<a class="button button--ink" href="${base}${escapeHtml(day.gpxFile.replace(/^\//, ''))}" download>Trace GPX</a>`);
-  }
-
-  if (!links.length) return '';
-
-  return `<section class="block" aria-labelledby="titre-fichiers">
-    <h2 class="block__title" id="titre-fichiers">Fichiers et cartes</h2>
-    <p class="buttons">${links.join('')}</p>
-  </section>`;
 }
 
 function dayNav(base, previous, next) {

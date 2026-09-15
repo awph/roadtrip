@@ -190,15 +190,22 @@ Une ligne de la forme `"Libellé : 112"` devient automatiquement un bouton
 d'appel. Une ligne contenant un nom de domaine (`savoie-route.fr`) devient
 automatiquement un lien.
 
-### Ajouter les traces GPX
+### Ajouter le lien Ride Planner d'une étape
 
-Déposer les fichiers exportés depuis Ride Planner dans `public/gpx/`, nommés
-`J1.gpx` … `J7.gpx` (le nom attendu est celui du champ `gpxFile` de l'étape).
+Le site n'héberge pas de traces GPX : chaque étape renvoie vers son parcours
+Harley-Davidson Ride Planner, d'où l'on peut consulter la carte et télécharger
+le GPX si besoin.
 
-Tant qu'un fichier est absent, le bouton de téléchargement ne s'affiche pas —
-il n'y a jamais de lien mort — et le build le signale en fin de compilation.
+```json
+"ridePlannerUrl": "https://maps.harley-davidson.com/map/rides/4B6pVvbMqU/preview"
+```
 
-Pour ajouter le lien Ride Planner d'une étape, renseigner `ridePlannerUrl`.
+Le bouton « Ouvrir dans Ride Planner » apparaît au bas de la section
+*Itinéraire*. Tant que `ridePlannerUrl` vaut `null`, il ne s'affiche pas : il
+n'y a jamais de lien mort.
+
+C'est un lien vers l'extérieur, donc le seul écran du site qui demande du
+réseau. Tout le reste reste consultable hors ligne.
 
 ---
 
@@ -261,7 +268,7 @@ npm run icons      # régénère les icônes PNG depuis scripts/generate-icons.m
 | `src/lib/profile.js` | profils d'altitude et schéma de boucle, en SVG |
 | `src/sw.template.js` | service worker (stratégie cache d'abord) |
 | `public/fonts/` | polices auto-hébergées (sous-ensemble latin) |
-| `public/` | fichiers copiés tels quels (icônes, GPX, `app.js`) |
+| `public/` | fichiers copiés tels quels (icônes, `app.js`) |
 | `build.mjs` | le générateur complet |
 
 ### Publication ailleurs que sur GitHub Pages

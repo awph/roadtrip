@@ -105,8 +105,7 @@
         "Beaufort",
         "Bourg-Saint-Maurice"
       ],
-      "gpxFile": "gpx/J1.gpx",
-      "ridePlannerUrl": null,
+      "ridePlannerUrl": "https://maps.harley-davidson.com/map/rides/4B6pVvbMqU/preview",
       "options": [],
       "warnings": [
         "Le Col de la Ramaz peut fermer sur neige dès le début octobre. Vérifier la veille sur savoie-route.fr.",
@@ -175,7 +174,6 @@
         "Valloire",
         "Briançon"
       ],
-      "gpxFile": "gpx/J2.gpx",
       "ridePlannerUrl": null,
       "options": [
         {
@@ -260,7 +258,6 @@
         "Saint-Martin-d'Entraunes",
         "Barcelonnette"
       ],
-      "gpxFile": "gpx/J3.gpx",
       "ridePlannerUrl": null,
       "options": [],
       "warnings": [
@@ -330,7 +327,6 @@
         "Sospel",
         "Menton"
       ],
-      "gpxFile": "gpx/J4.gpx",
       "ridePlannerUrl": null,
       "options": [],
       "warnings": [
@@ -388,7 +384,6 @@
         "Entrevaux",
         "Castellane"
       ],
-      "gpxFile": "gpx/J5.gpx",
       "ridePlannerUrl": null,
       "options": [
         {
@@ -449,7 +444,6 @@
         "Serres",
         "Die"
       ],
-      "gpxFile": "gpx/J6.gpx",
       "ridePlannerUrl": null,
       "options": [
         {
@@ -532,7 +526,6 @@
         "Martigny",
         "La Conversion"
       ],
-      "gpxFile": "gpx/J7.gpx",
       "ridePlannerUrl": null,
       "options": [
         {

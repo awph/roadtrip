@@ -4,7 +4,6 @@
 
 import { createHash } from 'node:crypto';
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -32,7 +31,6 @@ async function build() {
   validate(trip);
 
   const stats = computeStats(trip);
-  const missingGpx = dropMissingGpx(trip);
 
   await rm(outDir, { recursive: true, force: true });
   await mkdir(outDir, { recursive: true });
@@ -75,9 +73,6 @@ async function build() {
 
   const bytes = await totalBytes();
   console.log(`Build terminé : ${pages.length + 3} pages, ${assets.length} fichiers précachés, ${(bytes / 1024).toFixed(0)} Ko.`);
-  if (missingGpx.length) {
-    console.warn(`Traces GPX absentes (bouton masqué) :\n  - ${missingGpx.join('\n  - ')}`);
-  }
   if (bytes > 2 * 1024 * 1024) {
     console.warn('Attention : le budget de 2 Mo est dépassé.');
   }
@@ -123,24 +118,6 @@ function validate(trip) {
     for (const problem of problems) console.error(`  - ${problem}`);
     process.exit(1);
   }
-}
-
-/**
- * The GPX traces are exported from Ride Planner by hand and are not all in
- * the repository yet. A declared-but-absent file hides its download button
- * instead of shipping a dead link; the build says which ones are missing.
- */
-function dropMissingGpx(trip) {
-  const missing = [];
-  for (const day of trip.days) {
-    if (!day.gpxFile) continue;
-    const relPath = day.gpxFile.replace(/^\//, '');
-    if (!existsSync(join(root, 'public', relPath))) {
-      missing.push(`${day.dayLabel} → public/${relPath}`);
-      day.gpxFile = null;
-    }
-  }
-  return missing;
 }
 
 function computeStats(trip) {
