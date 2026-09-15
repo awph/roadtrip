@@ -15,9 +15,9 @@ concurrency:
 
 jobs:
   build:
-    # Publish from whatever the repository's default branch is called, so a
-    # rename (or a later move to main) does not silently stop deployments.
-    if: github.ref_name == github.event.repository.default_branch
+    # main is the trunk: it is the only branch that publishes, whichever
+    # branch the repository is currently configured to show by default.
+    if: github.ref_name == 'main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
