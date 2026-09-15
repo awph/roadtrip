@@ -10,7 +10,10 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  # Scoped per ref: this repository keeps main and the working branch in
+  # sync, and a shared group let a push to one cancel the in-flight run of
+  # the other — including the run that was actually going to deploy.
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
