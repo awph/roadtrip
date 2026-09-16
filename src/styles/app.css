@@ -613,6 +613,55 @@ a.hotel__cell .hotel__cell-value { color: var(--c-red); }
   line-height: var(--lh-snug);
 }
 
+/* ---- Fallback beds ------------------------------------------------------
+   A dashed frame: visibly secondary to the main hotel plate without leaving
+   the vocabulary — ink rule, no rounded corners.
+   ------------------------------------------------------------------------- */
+
+.hotelalt {
+  margin-top: var(--sp-4);
+  border: 2px dashed var(--c-ink);
+  background: var(--c-card);
+}
+
+.hotelalt__label {
+  padding: var(--sp-2) var(--sp-4);
+  border-bottom: 2px dashed var(--c-ink);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-body);
+}
+
+.hotelalt__item { padding: var(--sp-4); }
+.hotelalt__item + .hotelalt__item { border-top: var(--rule); }
+
+.hotelalt__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  line-height: var(--lh-tight);
+}
+
+.hotelalt__where { margin-top: var(--sp-1); color: var(--c-body); }
+
+.hotelalt__link {
+  margin-top: var(--sp-1);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--c-muted);
+  overflow-wrap: anywhere;
+}
+
+.hotelalt__note {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--c-body);
+  line-height: var(--lh-snug);
+}
+
+.hotelalt .buttons { margin-top: var(--sp-3); }
+
 /* ---- Waypoints ----------------------------------------------------------- */
 
 .waypoints {

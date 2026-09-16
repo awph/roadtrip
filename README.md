@@ -65,6 +65,38 @@ Une fois la réservation faite, remplir les champs et changer le statut :
   l'application de navigation du téléphone. Le `phone` devient un lien d'appel.
 - Une étape sans hôtel du tout (le retour à la maison) : mettre `"hotel": null`.
 
+### Proposer un hôtel de repli
+
+Un `hotel` peut porter une liste `alternatives` : les adresses qu'on ouvre si
+le principal est complet. Elles s'affichent sous l'hôtel du soir, dans un
+cadre en pointillé, et en une ligne sur la page Hôtels.
+
+```json
+"hotel": {
+  "name": "Hôtel l'Autantic",
+  "city": "Bourg-Saint-Maurice",
+  "status": "à réserver",
+  "alternatives": [
+    {
+      "name": "Hôtel Base Camp Lodge",
+      "city": "Bourg-Saint-Maurice",
+      "address": null,
+      "phone": null,
+      "url": "https://www.booking.com/Share-oX8SsxM",
+      "notes": "Au pied du funiculaire"
+    }
+  ]
+}
+```
+
+- Chaque alternative doit avoir au moins un `name`, une `url`, un `phone` ou
+  une `address`, sinon la compilation s'arrête.
+- Sans `name`, la carte affiche « Nom à confirmer » : le site n'invente jamais
+  un nom d'hôtel.
+- Un `phone` donne un bouton « Appeler », une `address` un bouton « Y aller »,
+  une `url` un bouton « Voir l'offre ». Seul le domaine du lien est affiché.
+- Pas de repli pour cette nuit : supprimer la clé, ou la laisser à `[]`.
+
 ### Corriger une distance ou un temps de roulage
 
 Dans l'étape concernée :

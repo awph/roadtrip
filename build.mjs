@@ -107,6 +107,11 @@ function validate(trip) {
         problems.push(`${where} : altitude de "${col.name}" doit être un nombre`);
       }
     }
+    for (const alt of day.hotel?.alternatives || []) {
+      if (!alt.name && !alt.url && !alt.phone && !alt.address) {
+        problems.push(`${where} : une alternative d'hôtel sans nom, lien, téléphone ni adresse`);
+      }
+    }
     if (day.hotel && day.hotel.status
       && !['à réserver', 'réservé', 'confirmé'].includes(day.hotel.status)) {
       problems.push(`${where} : statut d'hôtel inconnu "${day.hotel.status}"`);

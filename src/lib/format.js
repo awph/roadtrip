@@ -122,6 +122,19 @@ export function text(value) {
   return escapeHtml(punctuate(value));
 }
 
+/**
+ * Domain of a link, without scheme or `www.`. The full path is never shown:
+ * it is unreadable on a phone, and its segments — often English — are not
+ * interface copy, so they would trip the Rule Zero check.
+ */
+export function hostLabel(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return String(url || '').replace(/^https?:\/\//, '').split('/')[0];
+  }
+}
+
 /** Builds a `geo:` friendly maps link that native apps pick up. */
 export function mapsUrl(address) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;

@@ -1,5 +1,5 @@
 import {
-  escapeHtml, formatDateShort, mapsUrl, statusSlug, telUrl, text,
+  escapeHtml, formatDateShort, hostLabel, mapsUrl, statusSlug, telUrl, text,
 } from '../lib/format.js';
 import { layout } from './layout.js';
 
@@ -69,6 +69,24 @@ function hotelRow(base, day) {
       ${hotel.parking ? `<p class="hotelrow__detail">${text(hotel.parking)}</p>` : ''}
       ${hotel.bookingRef ? `<p class="hotelrow__detail">Référence${' '}: ${text(hotel.bookingRef)}</p>` : ''}
       ${actions.length ? `<p class="buttons">${actions.join('')}</p>` : ''}
+      ${alternativesLine(hotel)}
       <p class="hotelrow__more"><a class="textlink" href="${base}jour/${day.id}/">Voir l’étape →</a></p>
     </li>`;
+}
+
+/**
+ * One quiet line: the detail of a fallback lives on the day page, so the
+ * list of nights stays readable at a glance.
+ */
+function alternativesLine(hotel) {
+  const list = hotel.alternatives || [];
+  if (!list.length) return '';
+
+  // With no name, the link says more than the city, already shown just above.
+  const names = list
+    .map((alt) => alt.name || (alt.url ? hostLabel(alt.url) : alt.city))
+    .filter(Boolean);
+  const label = list.length > 1 ? 'Autres options' : 'Autre option';
+
+  return `<p class="hotelrow__detail">${label}${'\u00a0'}: ${text(names.length ? names.join(', ') : 'voir l’étape')}</p>`;
 }

@@ -120,7 +120,17 @@
         "url": null,
         "parking": null,
         "notes": null,
-        "bookingRef": null
+        "bookingRef": null,
+        "alternatives": [
+          {
+            "name": null,
+            "city": "Bourg-Saint-Maurice",
+            "address": null,
+            "phone": null,
+            "url": "https://www.booking.com/Share-oX8SsxM",
+            "notes": null
+          }
+        ]
       }
     },
     {

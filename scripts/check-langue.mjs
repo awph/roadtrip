@@ -27,6 +27,9 @@ const PROPER_NOUNS = [
   'Road Book',
   'Road book',
   'Ride Planner',
+  // Marque du site de réservation : affichée telle quelle dans les liens.
+  'Booking.com',
+  'booking.com',
 ];
 
 // Bornes de mot conscientes des accents : `\b` couperait « téléphone »

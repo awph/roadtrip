@@ -1,6 +1,6 @@
 import {
   escapeHtml, formatAdds, formatAltitude, formatDateShort, formatDistance,
-  formatDuration, formatNumber, mapsUrl, statusSlug, telUrl, text,
+  formatDuration, formatNumber, hostLabel, mapsUrl, statusSlug, telUrl, text,
 } from '../lib/format.js';
 import { elevationProfile } from '../lib/profile.js';
 import { layout } from './layout.js';
@@ -74,6 +74,7 @@ export function dayPage({ base, trip, day, previous, next }) {
   <section class="block" aria-labelledby="titre-ce-soir">
     <h2 class="block__title" id="titre-ce-soir">Ce soir</h2>
     ${hotelBlock(day)}
+    ${hotelAlternatives(day)}
   </section>
 
   ${day.waypoints?.length || day.ridePlannerUrl ? `<section class="block" aria-labelledby="titre-itineraire">
@@ -203,7 +204,7 @@ function hotelBlock(day) {
   if (hotel.url) {
     cells.push(`<a class="hotel__cell" href="${escapeHtml(hotel.url)}" rel="noopener">
         <span class="hotel__cell-label">Site</span>
-        <span class="hotel__cell-value">${text(hotel.url.replace(/^https?:\/\//, ''))}</span>
+        <span class="hotel__cell-value">${text(hostLabel(hotel.url))}</span>
       </a>`);
   }
 
@@ -230,6 +231,45 @@ function hotelBlock(day) {
       ${hotel.notes ? `<p class="hotel__note">${text(hotel.notes)}</p>` : ''}
       ${status === 'à réserver' ? `<p class="hotel__note empty">Rien n'est encore réservé pour cette nuit.</p>` : ''}
     </div>`;
+}
+
+/**
+ * Fallbacks for the night: what you open if the main hotel is full.
+ * Rendered only when the data exists, and never under an invented name.
+ */
+function hotelAlternatives(day) {
+  const list = day.hotel?.alternatives || [];
+  if (!list.length) return '';
+
+  return `<div class="hotelalt">
+      <p class="hotelalt__label">${list.length > 1 ? 'Autres options' : 'Autre option'}</p>
+      <ul class="hotelalt__list">
+        ${list.map(alternativeRow).join('\n        ')}
+      </ul>
+    </div>`;
+}
+
+function alternativeRow(alt) {
+  const actions = [];
+  if (alt.phone) {
+    actions.push(`<a class="button button--ink" href="${escapeHtml(telUrl(alt.phone))}">Appeler</a>`);
+  }
+  if (alt.address) {
+    actions.push(`<a class="button button--ink" href="${escapeHtml(mapsUrl(alt.address))}">Y aller</a>`);
+  }
+  if (alt.url) {
+    actions.push(`<a class="button button--ink" href="${escapeHtml(alt.url)}" rel="noopener">Voir l’offre</a>`);
+  }
+
+  const where = alt.address || alt.city;
+
+  return `<li class="hotelalt__item">
+          <p class="hotelalt__name">${text(alt.name || 'Nom à confirmer')}</p>
+          ${where ? `<p class="hotelalt__where">${text(where)}</p>` : ''}
+          ${alt.url ? `<p class="hotelalt__link">${text(hostLabel(alt.url))}</p>` : ''}
+          ${alt.notes ? `<p class="hotelalt__note">${text(alt.notes)}</p>` : ''}
+          ${actions.length ? `<p class="buttons">${actions.join('')}</p>` : ''}
+        </li>`;
 }
 
 function dayNav(base, previous, next) {
