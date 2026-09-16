@@ -101,6 +101,36 @@ cadre en pointillé, et en une ligne sur la page Hôtels.
   une `url` un bouton « Voir l'offre ». Seul le domaine du lien est affiché.
 - Pas de repli pour cette nuit : supprimer la clé, ou la laisser à `[]`.
 
+### Nommer une étape
+
+Chaque étape peut porter un `title`, une formule courte qui la résume :
+
+```json
+"title": "La journée reine",
+```
+
+Il s'affiche sous l'itinéraire dans l'en-tête noir de l'étape, sur sa carte en
+page d'accueil, et dans le titre de l'onglet. Sans `title`, tout continue de
+fonctionner : c'est l'itinéraire qui sert de titre.
+
+### Changer l'accroche et l'introduction
+
+Dans le bloc `meta` :
+
+- `tagline` : la phrase sous le grand titre de l'accueil.
+- `intro` : le paragraphe en tête de la section *La boucle*.
+- `description` : la phrase que voient Google et l'écran d'accueil du
+  téléphone. Elle n'est pas affichée sur le site.
+- `subtitle` et `shortDates` ne sont pas affichés aujourd'hui ; ils restent
+  là pour rester à portée de main.
+
+Les totaux (distance, roulage, nombre de cols) ne se saisissent nulle part :
+ils sont recalculés à partir des étapes, pour qu'ils ne puissent jamais
+contredire le contenu.
+
+Le bloc `_notes`, en bas du fichier, n'est lu par personne : c'est un
+bloc-notes, il ne s'affiche pas sur le site.
+
 ### Corriger une distance ou un temps de roulage
 
 Dans l'étape concernée :
@@ -111,7 +141,8 @@ Dans l'étape concernée :
 ```
 
 - `distanceKm` est un **nombre**, sans guillemets et sans unité.
-- `ridingTime` s'écrit toujours `"5h14"`. Le site l'affiche en `5 h 14`.
+- `ridingTime` s'écrit `"5h14"` ou `"5 h 14"`, au choix : le site l'affiche
+  toujours en `5 h 14`.
 
 Les totaux de la page d'accueil (distance, roulage, nombre de cols, nombre
 d'étapes) sont recalculés tout seuls. Il n'y a rien d'autre à changer.

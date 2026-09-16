@@ -19,6 +19,7 @@ export function dayPage({ base, trip, day, previous, next }) {
     <span class="dayhead__eyebrow">Jour ${dayNumber} · ${text(formatDateShort(day.date))}</span>
   </div>
   <h1 class="dayhead__route">${text(day.from)} <span class="arrow" aria-hidden="true">→</span><span class="visually-hidden"> vers </span> ${text(day.to)}</h1>
+  ${day.title ? `<p class="dayhead__title">${text(day.title)}</p>` : ''}
 </header>
 
 <div class="statband">
@@ -40,7 +41,7 @@ export function dayPage({ base, trip, day, previous, next }) {
 
   <p class="day__summary">${text(day.summary)}</p>
 
-  ${day.cols.length ? `<section class="block" aria-labelledby="titre-profil">
+  ${day.cols.length > 1 ? `<section class="block" aria-labelledby="titre-profil">
     <h2 class="block__title" id="titre-profil">Profil des cols</h2>
     ${elevationProfile(day.cols, { label: routeLabel })}
   </section>` : ''}
@@ -92,7 +93,7 @@ ${dayNav(base, previous, next)}`;
 
   return layout({
     base,
-    title: `${day.dayLabel} · ${routeLabel}`,
+    title: day.title ? `${day.dayLabel} · ${day.title}` : `${day.dayLabel} · ${routeLabel}`,
     description,
     path: `jour/${day.id}/`,
     bodyClass: 'page-day',

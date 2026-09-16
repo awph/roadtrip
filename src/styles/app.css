@@ -229,6 +229,15 @@ a { color: inherit; text-decoration: none; }
   text-wrap: balance;
 }
 
+/* The day's own name, under the route in the ink header. */
+.dayhead__title {
+  margin-top: var(--sp-2);
+  color: var(--c-on-ink-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-snug);
+  text-wrap: pretty;
+}
+
 .statband {
   display: flex;
   background: var(--c-red);
@@ -761,6 +770,14 @@ a.hotel__cell .hotel__cell-value { color: var(--c-red); }
   text-transform: uppercase;
   line-height: var(--lh-snug);
   margin-top: var(--sp-2);
+  text-wrap: pretty;
+}
+
+.daycard__title {
+  display: block;
+  margin-top: var(--sp-1);
+  color: var(--c-body);
+  line-height: var(--lh-snug);
   text-wrap: pretty;
 }
 

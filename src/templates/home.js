@@ -10,7 +10,7 @@ export function homePage({ base, trip, stats }) {
   const content = `<header class="masthead">
   <p class="masthead__eyebrow"><span class="masthead__dash" aria-hidden="true"></span>Road book · Alpes</p>
   <h1 class="masthead__title">${text(meta.title)}</h1>
-  <p class="masthead__lede">${text(meta.description)}</p>
+  <p class="masthead__lede">${text(meta.tagline || meta.description)}</p>
   <dl class="masthead__figures">
     <div>
       <dt>Dates</dt>
@@ -30,6 +30,7 @@ export function homePage({ base, trip, stats }) {
 <main id="contenu">
   <section class="block" aria-labelledby="titre-boucle">
     <h2 class="block__title" id="titre-boucle">La boucle</h2>
+    ${meta.intro ? `<p class="prose">${text(meta.intro)}</p>` : ''}
     ${routeMap(days, meta.mapPoints)}
   </section>
 
@@ -70,6 +71,7 @@ function dayCard(base, day) {
           <span class="daycard__body">
             <span class="daycard__date">${text(formatDateShort(day.date))}</span>
             <span class="daycard__route">${text(day.from)} <span class="arrow" aria-hidden="true">→</span><span class="visually-hidden"> vers </span> ${text(day.to)}</span>
+            ${day.title ? `<span class="daycard__title">${text(day.title)}</span>` : ''}
             <span class="daycard__figures">
               <span>${text(formatDistance(day.distanceKm))}</span>
               <span class="daycard__sep" aria-hidden="true">|</span>
