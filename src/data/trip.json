@@ -201,7 +201,7 @@
         "Départ tôt conseillé. L'Iseran est glacé tant que le soleil n'a pas tourné."
       ],
       "hotel": {
-        "name": "Hôtel Vauban",
+        "name": null,
         "city": "Briançon",
         "status": "à réserver",
         "address": null,
@@ -209,7 +209,25 @@
         "url": null,
         "parking": null,
         "notes": null,
-        "bookingRef": null
+        "bookingRef": null,
+        "alternatives": [
+          {
+            "name": null,
+            "city": "Briançon",
+            "address": null,
+            "phone": null,
+            "url": "https://www.booking.com/Share-kMK6V2",
+            "notes": null
+          },
+          {
+            "name": null,
+            "city": "Briançon",
+            "address": null,
+            "phone": null,
+            "url": "https://www.booking.com/Share-q37W8t",
+            "notes": null
+          }
+        ]
       }
     },
     {

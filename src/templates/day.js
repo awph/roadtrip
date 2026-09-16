@@ -244,27 +244,30 @@ function hotelAlternatives(day) {
   return `<div class="hotelalt">
       <p class="hotelalt__label">${list.length > 1 ? 'Autres options' : 'Autre option'}</p>
       <ul class="hotelalt__list">
-        ${list.map(alternativeRow).join('\n        ')}
+        ${list.map((alt, index) => alternativeRow(alt, index + 1, list.length)).join('\n        ')}
       </ul>
     </div>`;
 }
 
-function alternativeRow(alt) {
-  const actions = [];
-  if (alt.phone) {
-    actions.push(`<a class="button button--ink" href="${escapeHtml(telUrl(alt.phone))}">Appeler</a>`);
-  }
-  if (alt.address) {
-    actions.push(`<a class="button button--ink" href="${escapeHtml(mapsUrl(alt.address))}">Y aller</a>`);
-  }
-  if (alt.url) {
-    actions.push(`<a class="button button--ink" href="${escapeHtml(alt.url)}" rel="noopener">Voir l’offre</a>`);
-  }
-
+function alternativeRow(alt, position, total) {
   const where = alt.address || alt.city;
 
+  // Two unnamed links would render as two identical cards. Numbering them
+  // gives the rider something to point at before tapping through.
+  const name = alt.name || (total > 1 ? `Option ${position}` : 'Nom à confirmer');
+
+  // The label carries the name too: a screen reader listing the links of the
+  // page would otherwise read the same "Voir l'offre" for every option.
+  const action = (href, label) => `<a class="button button--ink" href="${escapeHtml(href)}"`
+    + ` aria-label="${text(`${label} : ${name}`)}" rel="noopener">${label}</a>`;
+
+  const actions = [];
+  if (alt.phone) actions.push(action(telUrl(alt.phone), 'Appeler'));
+  if (alt.address) actions.push(action(mapsUrl(alt.address), 'Y aller'));
+  if (alt.url) actions.push(action(alt.url, 'Voir l’offre'));
+
   return `<li class="hotelalt__item">
-          <p class="hotelalt__name">${text(alt.name || 'Nom à confirmer')}</p>
+          <p class="hotelalt__name">${text(name)}</p>
           ${where ? `<p class="hotelalt__where">${text(where)}</p>` : ''}
           ${alt.url ? `<p class="hotelalt__link">${text(hostLabel(alt.url))}</p>` : ''}
           ${alt.notes ? `<p class="hotelalt__note">${text(alt.notes)}</p>` : ''}

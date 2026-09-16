@@ -91,8 +91,12 @@ cadre en pointillé, et en une ligne sur la page Hôtels.
 
 - Chaque alternative doit avoir au moins un `name`, une `url`, un `phone` ou
   une `address`, sinon la compilation s'arrête.
-- Sans `name`, la carte affiche « Nom à confirmer » : le site n'invente jamais
-  un nom d'hôtel.
+- Sans `name`, la carte affiche « Nom à confirmer », ou « Option 1 »,
+  « Option 2 »… s'il y a plusieurs pistes : le site n'invente jamais un nom
+  d'hôtel.
+- Une nuit encore ouverte se note `"name": null` sur l'hôtel principal — la
+  plaque affiche « Hébergement à trouver » et les pistes se lisent en dessous
+  (c'est le cas du jour 2, Briançon).
 - Un `phone` donne un bouton « Appeler », une `address` un bouton « Y aller »,
   une `url` un bouton « Voir l'offre ». Seul le domaine du lien est affiché.
 - Pas de repli pour cette nuit : supprimer la clé, ou la laisser à `[]`.

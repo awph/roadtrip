@@ -1,5 +1,5 @@
 import {
-  escapeHtml, formatDateShort, hostLabel, mapsUrl, statusSlug, telUrl, text,
+  escapeHtml, formatDateShort, mapsUrl, statusSlug, telUrl, text,
 } from '../lib/format.js';
 import { layout } from './layout.js';
 
@@ -82,11 +82,14 @@ function alternativesLine(hotel) {
   const list = hotel.alternatives || [];
   if (!list.length) return '';
 
-  // With no name, the link says more than the city, already shown just above.
-  const names = list
-    .map((alt) => alt.name || (alt.url ? hostLabel(alt.url) : alt.city))
-    .filter(Boolean);
   const label = list.length > 1 ? 'Autres options' : 'Autre option';
 
-  return `<p class="hotelrow__detail">${label}${'\u00a0'}: ${text(names.length ? names.join(', ') : 'voir l’étape')}</p>`;
+  // Named beds are worth reading here; the rest are counted, since several
+  // lines of the same domain would say nothing.
+  const named = list.map((alt) => alt.name).filter(Boolean);
+  const pending = list.length - named.length;
+  const parts = [...named];
+  if (pending) parts.push(`${pending} lien${pending > 1 ? 's' : ''} à ouvrir`);
+
+  return `<p class="hotelrow__detail">${label}${'\u00a0'}: ${text(parts.join(', '))}</p>`;
 }
