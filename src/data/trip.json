@@ -63,37 +63,45 @@
       "cols": [
         {
           "name": "Pas de Morgins",
-          "altitude": 1369
+          "altitude": 1369,
+          "statusUrl": "https://www.tcs.ch/fr/tools/inforoute-situation-trafic/cols-en-suisse.php"
         },
         {
           "name": "Col du Corbier",
-          "altitude": 1237
+          "altitude": 1237,
+          "statusUrl": "https://www.inforoute74.fr/"
         },
         {
           "name": "Col de l'Encrenaz",
-          "altitude": 1433
+          "altitude": 1433,
+          "statusUrl": "https://www.inforoute74.fr/"
         },
         {
           "name": "Col de la Ramaz",
           "altitude": 1619,
-          "notes": "Peut fermer sur neige dès le début octobre. Vérifier la veille sur savoie-route.fr."
+          "notes": "Peut fermer sur neige dès le début octobre. Vérifier la veille sur savoie-route.fr.",
+          "statusUrl": "https://www.inforoute74.fr/"
         },
         {
           "name": "Col de la Colombière",
-          "altitude": 1613
+          "altitude": 1613,
+          "statusUrl": "https://www.inforoute74.fr/"
         },
         {
           "name": "Col des Aravis",
-          "altitude": 1486
+          "altitude": 1486,
+          "statusUrl": "https://www.inforoute74.fr/"
         },
         {
           "name": "Col des Saisies",
-          "altitude": 1650
+          "altitude": 1650,
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Cormet de Roselend",
           "altitude": 1968,
-          "notes": "Exposé au gel matinal. Prudence sur les zones d'ombre en descente."
+          "notes": "Exposé au gel matinal. Prudence sur les zones d'ombre en descente.",
+          "statusUrl": "https://savoie-route.fr/"
         }
       ],
       "waypoints": [
@@ -165,19 +173,23 @@
         {
           "name": "Col de l'Iseran",
           "altitude": 2764,
-          "notes": "Plus haut col routier des Alpes. Fermeture possible sur neige sans préavis en octobre."
+          "notes": "Plus haut col routier des Alpes. Fermeture possible sur neige sans préavis en octobre.",
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col du Mont-Cenis",
-          "altitude": 2083
+          "altitude": 2083,
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col du Glandon",
-          "altitude": 1924
+          "altitude": 1924,
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col de la Croix de Fer",
-          "altitude": 2067
+          "altitude": 2067,
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col du Télégraphe",
@@ -271,32 +283,38 @@
       "cols": [
         {
           "name": "Col d'Izoard",
-          "altitude": 2360
+          "altitude": 2360,
+          "statusUrl": "https://inforoute.hautes-alpes.fr/www/index.html"
         },
         {
           "name": "Col Agnel",
           "altitude": 2744,
           "notes": "Deuxième plus haut col routier des Alpes. Fermeture fréquente en octobre, côté français comme côté italien.",
-          "side": "Français, puis Pontechianale"
+          "side": "Français, puis Pontechianale",
+          "statusUrl": "https://inforoute.hautes-alpes.fr/www/index.html"
         },
         {
           "name": "Col de Vars",
-          "altitude": 2109
+          "altitude": 2109,
+          "statusUrl": "https://inforoute.hautes-alpes.fr/www/index.html"
         },
         {
           "name": "Col d'Allos",
           "altitude": 2250,
-          "notes": "Route étroite sans parapet, fermée dès la première neige."
+          "notes": "Route étroite sans parapet, fermée dès la première neige.",
+          "statusUrl": "https://www.inforoute04.fr/"
         },
         {
           "name": "Col des Champs",
           "altitude": 2087,
-          "notes": "Route étroite sans parapet, fermée dès la première neige."
+          "notes": "Route étroite sans parapet, fermée dès la première neige.",
+          "statusUrl": "https://www.inforoute04.fr/"
         },
         {
           "name": "Col de la Cayolle",
           "altitude": 2326,
-          "notes": "Route étroite sans parapet, fermée dès la première neige."
+          "notes": "Route étroite sans parapet, fermée dès la première neige.",
+          "statusUrl": "https://www.inforoute04.fr/"
         }
       ],
       "waypoints": [
@@ -353,21 +371,25 @@
         {
           "name": "Cime de la Bonette",
           "altitude": 2802,
-          "notes": "Plus haute route d'Europe. Exposée, fermeture sur neige possible sans préavis."
+          "notes": "Plus haute route d'Europe. Exposée, fermeture sur neige possible sans préavis.",
+          "statusUrl": "https://www.inforoutes06.fr/"
         },
         {
           "name": "Col de la Lombarde",
           "altitude": 2351,
           "notes": "Versant italien étroit et souvent gravillonné. Fermeture sur neige possible.",
-          "side": "Isola 2000, puis Vinadio"
+          "side": "Isola 2000, puis Vinadio",
+          "statusUrl": "https://www.inforoutes06.fr/"
         },
         {
           "name": "Col Saint-Martin",
-          "altitude": 1500
+          "altitude": 1500,
+          "statusUrl": "https://www.inforoutes06.fr/"
         },
         {
           "name": "Col de Turini",
-          "altitude": 1607
+          "altitude": 1607,
+          "statusUrl": "https://www.inforoutes06.fr/"
         }
       ],
       "waypoints": [
