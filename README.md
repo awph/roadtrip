@@ -7,6 +7,8 @@ qui est le point essentiel : il n'y a pas de réseau dans les cols.
 
 - **Tout le contenu est dans un seul fichier : [`src/data/trip.json`](src/data/trip.json).**
   Il n'y a jamais besoin de toucher au code pour mettre le site à jour.
+- **Pour importer une nouvelle version du parcours et des étapes**, le format
+  du fichier à fournir est décrit dans [`docs/format-import.md`](docs/format-import.md).
 
 ---
 
