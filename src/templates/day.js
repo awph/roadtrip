@@ -5,9 +5,6 @@ import {
 import { elevationProfile } from '../lib/profile.js';
 import { layout } from './layout.js';
 
-/** Shown on every pass panel; the site has no live data of its own. */
-const PASS_STATUS_URL = 'https://www.alpen-paesse.ch/fr/etat-des-cols/';
-
 export function dayPage({ base, trip, day, previous, next }) {
   const { meta } = trip;
   const routeLabel = `${day.from} → ${day.to}`;
@@ -150,7 +147,7 @@ function passRow(col, position) {
           ${col.notes ? `<p class="passpanel__note">${text(col.notes)}</p>` : ''}
           <p class="passpanel__actions">
             <a class="button button--red" href="${escapeHtml(mapsUrl(col.coords ? col.coords.join(',') : col.name))}" rel="noopener">Y aller</a>
-            <a class="button button--onink" href="${PASS_STATUS_URL}" rel="noopener">État du col</a>
+            ${col.statusUrl ? `<a class="button button--onink" href="${escapeHtml(col.statusUrl)}" rel="noopener">État du col</a>` : ''}
           </p>
         </div>
       </details>`;

@@ -134,6 +134,7 @@ que s'il est renseigné.
 | `stop` | texte | Arrêt conseillé. |
 | `openWindow` | texte | Période d'ouverture, par ex. `"juin → octobre"`. |
 | `coords` | `[latitude, longitude]` | Position du sommet, pour le bouton « Y aller ». |
+| `statusUrl` | texte (URL) | Page officielle d'état du col (ouverture, fermetures), pour le bouton « État du col ». Sans lien, le bouton n'apparaît pas. |
 
 ### Une variante (`options[]`)
 

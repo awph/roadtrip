@@ -168,8 +168,8 @@ le profil et marqué « variante » dans la liste.
 ### Détailler un col
 
 Sur la page d'une étape, chaque col se déplie au toucher. Le panneau n'affiche
-que les champs renseignés — un col sans détail montre simplement ses deux
-boutons. Tous ces champs sont facultatifs :
+que les champs renseignés — un col sans détail montre simplement son bouton
+« Y aller ». Tous ces champs sont facultatifs :
 
 ```json
 {
@@ -185,7 +185,8 @@ boutons. Tous ces champs sont facultatifs :
   "stop": "Plateau de Praz de Lys",
   "openWindow": "juin → octobre",
   "notes": "Revêtement neuf sur les six derniers kilomètres.",
-  "coords": [46.146, 6.592]
+  "coords": [46.146, 6.592],
+  "statusUrl": "https://…"
 }
 ```
 
@@ -194,6 +195,8 @@ boutons. Tous ces champs sont facultatifs :
 - `surface` est une liste d'étiquettes courtes.
 - `coords` sert au bouton « Y aller ». Sans coordonnées, le bouton cherche le
   col par son nom, ce qui suffit dans la plupart des cas.
+- `statusUrl` est le lien du bouton « État du col » : la page officielle qui
+  annonce l'ouverture ou la fermeture de ce col. Sans lien, le bouton est masqué.
 
 Les chiffres de montée, de pente, d'épingles et de revêtement ne sont pas
 fournis : ils se relèvent sur vos propres traces. Seules les informations
