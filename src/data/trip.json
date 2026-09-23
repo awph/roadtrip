@@ -181,16 +181,19 @@
         },
         {
           "name": "Col du Télégraphe",
-          "altitude": 1566
+          "altitude": 1566,
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col du Galibier",
           "altitude": 2642,
-          "notes": "Fermeture possible sur neige en octobre. Repli par le Lautaret depuis Saint-Michel-de-Maurienne."
+          "notes": "Fermeture possible sur neige en octobre. Repli par le Lautaret depuis Saint-Michel-de-Maurienne.",
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col du Lautaret",
-          "altitude": 2058
+          "altitude": 2058,
+          "statusUrl": "https://inforoute.hautes-alpes.fr/www/index.html"
         }
       ],
       "waypoints": [
@@ -421,15 +424,18 @@
       "cols": [
         {
           "name": "Col de Castillon",
-          "altitude": 706
+          "altitude": 706,
+          "statusUrl": "https://www.inforoutes06.fr/"
         },
         {
           "name": "Col de Braus",
-          "altitude": 1002
+          "altitude": 1002,
+          "statusUrl": "https://www.inforoutes06.fr/"
         },
         {
           "name": "Col de Valberg",
-          "altitude": 1672
+          "altitude": 1672,
+          "statusUrl": "https://www.inforoutes06.fr/"
         },
         {
           "name": "Col de Toutes Aures",
@@ -489,19 +495,23 @@
       "cols": [
         {
           "name": "Col de Cabre",
-          "altitude": 1180
+          "altitude": 1180,
+          "statusUrl": "https://inforoute.hautes-alpes.fr/www/index.html"
         },
         {
           "name": "Col de Rousset",
-          "altitude": 1254
+          "altitude": 1254,
+          "statusUrl": "https://inforoutes.ladrome.fr/adws/app/daff9132-4ccc-11e6-b100-0dc599158759/index.html"
         },
         {
           "name": "Col de la Chau",
-          "altitude": 1337
+          "altitude": 1337,
+          "statusUrl": "https://inforoutes.ladrome.fr/adws/app/daff9132-4ccc-11e6-b100-0dc599158759/index.html"
         },
         {
           "name": "Col de la Machine",
-          "altitude": 1011
+          "altitude": 1011,
+          "statusUrl": "https://inforoutes.ladrome.fr/adws/app/daff9132-4ccc-11e6-b100-0dc599158759/index.html"
         }
       ],
       "waypoints": [
@@ -554,7 +564,8 @@
       "cols": [
         {
           "name": "Col du Lautaret",
-          "altitude": 2058
+          "altitude": 2058,
+          "statusUrl": "https://inforoute.hautes-alpes.fr/www/index.html"
         },
         {
           "name": "Col du Galibier",
@@ -562,7 +573,8 @@
           "coords": [
             45.064,
             6.409
-          ]
+          ],
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col du Télégraphe",
@@ -570,7 +582,8 @@
           "coords": [
             45.203,
             6.444
-          ]
+          ],
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col du Petit-Saint-Bernard",
@@ -578,7 +591,8 @@
           "coords": [
             45.68,
             6.885
-          ]
+          ],
+          "statusUrl": "https://savoie-route.fr/"
         },
         {
           "name": "Col du Grand-Saint-Bernard",
@@ -586,7 +600,8 @@
           "coords": [
             45.869,
             7.17
-          ]
+          ],
+          "statusUrl": "https://www.tcs.ch/fr/tools/inforoute-situation-trafic/cols-en-suisse.php"
         }
       ],
       "waypoints": [
